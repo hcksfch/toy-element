@@ -1,0 +1,23 @@
+{
+  "extends": "@vue/tsconfig/tsconfig.dom.json",
+  "compilerOptions": {
+    "target": "es2020",
+    "useDefineForClassFields": true,
+    "module": "esnext",
+    "lib": ["ES2020", "DOM", "DOM.Iterable"],
+    "skipLibCheck": true,
+
+    "moduleResolution": "bundler",
+    "allowImportingTsExtensions": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "jsx": "preserve",
+    "jsxImportSource": "vue",
+
+    "strict": true,
+    "noUnusedLocals": true,
+    "noFallthroughCasesInSwitch": true
+  },
+  "include": ["packages/**/*.ts", "packages/**/*.tsx", "packages/**/*.vue"]
+}

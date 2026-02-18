@@ -1,0 +1,11 @@
+{
+  "compilerOptions": {
+    "composite": true,
+    "module": "ESNext",
+    "types": ["node"],
+
+    /* Bundler mode */
+    "moduleResolution": "bundler"
+  },
+  "include": ["packages/**/**.config.ts"]
+}
