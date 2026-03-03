@@ -5,6 +5,8 @@ on:
     branches:
       - master
 
+  workflow_dispatch:
+
 jobs:
   test:
     name: Run Lint and Test
@@ -21,6 +23,9 @@ jobs:
 
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
+
+      - name: Build
+        run: npm run build
 
       - name: Run tests
         run: npm run test
