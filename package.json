@@ -1,40 +1,50 @@
 {
-  "name": "toy-element",
+  "name": "toy-elementhh-workspace",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "pnpm --filter @toy-element/play dev",
-    "docs:dev": "pnpm --filter @toy-element/docs dev",
-    "docs:build": "pnpm --filter @toy-element/docs build",
-    "test": "echo 'todo'"
+    "dev": "pnpm run build && pnpm --filter @toy-elementhh/play dev",
+    "story": "pnpm run build && pnpm --filter @toy-elementhh/play storybook",
+    "docs:dev": "pnpm --filter @toy-elementhh/docs dev",
+    "docs:build": "pnpm --filter @toy-elementhh/docs build",
+    "test": "pnpm --filter @toy-elementhh/components test",
+    "build": "pnpm --filter toy-elementhh build"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "packageManager": "pnpm@10.10.0",
   "devDependencies": {
+    "@fortawesome/fontawesome-svg-core": "^7.2.0",
+    "@fortawesome/free-solid-svg-icons": "^7.2.0",
+    "@fortawesome/vue-fontawesome": "3.1.3",
+    "@popperjs/core": "^2.11.8",
     "@types/lodash-es": "^4.17.12",
-    "@types/node": "^24.10.13",
+    "@types/node": "^24.11.0",
     "@vitejs/plugin-vue": "^6.0.4",
     "@vitejs/plugin-vue-jsx": "^5.1.4",
     "@vue/tsconfig": "^0.8.1",
+    "async-validator": "^4.2.5",
+    "move-file-cli": "^3.0.0",
+    "npm-run-all": "^4.1.5",
     "postcss-color-mix": "^1.1.0",
     "postcss-each": "^1.1.0",
     "postcss-each-variables": "^0.3.0",
     "postcss-for": "^2.1.1",
     "postcss-nested": "^7.0.2",
+    "rimraf": "^6.1.3",
     "typescript": "~5.9.3",
     "vite": "^7.3.1",
     "vitest": "^4.0.18",
-    "vue-tsc": "^3.2.4"
+    "vue-tsc": "^3.2.5"
   },
   "dependencies": {
+    "@toy-elementhh/hooks": "workspace:*",
+    "@toy-elementhh/theme": "workspace:*",
+    "@toy-elementhh/utils": "workspace:*",
     "lodash-es": "^4.17.23",
-    "vue": "^3.5.28",
-    "toy-element": "workspace:*",
-    "@toy-element/hooks": "workspace:*",
-    "@toy-element/utils": "workspace:*",
-    "@toy-element/theme": "workspace:*"
+    "toy-elementhh": "workspace:*",
+    "vue": "^3.5.29"
   }
 }

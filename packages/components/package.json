@@ -1,10 +1,10 @@
 {
-  "name": "@toy-element/components",
+  "name": "@toy-elementhh/components",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "vitest --coverage"
   },
   "keywords": [],
   "author": "",
@@ -15,8 +15,5 @@
     "@vue/test-utils": "^2.4.6",
     "jsdom": "^28.1.0"
   },
-  "dependencies": {
-    "@popperjs/core": "^2.11.8",
-    "async-validator": "^4.2.5"
-  }
+  "dependencies": {}
 }
