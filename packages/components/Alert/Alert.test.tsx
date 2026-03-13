@@ -113,10 +113,10 @@ describe("Alert.vue", () => {
   it("should not render close icon when closable is false", () => {
     const wrapper = mount(Alert, {
       props: {
-        closeable: false,
+        closable: false,
       },
     });
-    const closeIcon = wrapper.findComponent(ErIcon);
+    const closeIcon = wrapper.find(".er-alert__close");
     expect(closeIcon.exists()).toBeFalsy();
   });
 });
