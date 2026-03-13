@@ -1,5 +1,5 @@
 import type { Preview } from "@storybook/vue3-vite";
-import "toy-elementhh/dist/index.css";
+import "toy-elementhh/dist/theme/index.css";
 
 const preview: Preview = {
   parameters: {

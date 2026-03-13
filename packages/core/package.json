@@ -24,17 +24,20 @@
     "./dist/index.css"
   ],
   "scripts": {
-    "build": "run-s clean build-only move-style",
-    "build-only": "run-p build-umd build-es",
+    "build": "run-p build-es build-umd",
+    "build:watch": "run-p build-es:watch build-umd:watch",
     "build-umd": "vite build --config vite.umd.config.ts",
+    "build-umd:watch": "vite build --config vite.umd.config.ts --watch",
     "build-es": "vite build --config vite.es.config.ts",
-    "move-style": "move-file dist/es/index.css dist/index.css",
-    "clean": "rimraf dist"
+    "build-es:watch": "vite build --config vite.es.config.ts --watch"
   },
   "keywords": [],
   "devDependencies": {
-    "vite-plugin-dts": "^4.5.4",
-    "@toy-elementhh/components": "workspace:*"
+    "@rollup/plugin-terser": "^1.0.0",
+    "@toy-elementhh/components": "workspace:*",
+    "terser": "^5.46.0",
+    "vite-plugin-compression2": "^2.5.0",
+    "vite-plugin-dts": "^4.5.4"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^7.2.0",

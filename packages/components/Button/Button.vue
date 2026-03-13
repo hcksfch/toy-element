@@ -52,7 +52,7 @@
 import { ref, computed, inject } from "vue";
 import type { ButtonProps, ButtonEmits, ButtonInstance } from "./types";
 import { throttle } from "lodash-es";
-import { ErIcon } from "toy-elementhh";
+import ErIcon from "../Icon/Icon.vue";
 import { BUTTON_GROUP_CONTEXT_KEY } from "./constant";
 
 defineOptions({
@@ -87,6 +87,9 @@ const handleBtnClickThrottled = throttle(
 
 defineExpose<ButtonInstance>({
   ref: _ref,
+  disabled,
+  size,
+  type,
 });
 </script>
 

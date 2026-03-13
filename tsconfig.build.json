@@ -2,10 +2,7 @@
   "extends": "@vue/tsconfig/tsconfig.dom.json",
   "compilerOptions": {
     "target": "es2020",
-    "baseUrl": ".",
-    "paths": {
-      "toy-elementhh": ["packages/core/index.ts"]
-    },
+
     "useDefineForClassFields": true,
     "module": "esnext",
     "lib": ["ES2020", "DOM", "DOM.Iterable"],
@@ -21,15 +18,20 @@
 
     "strict": true,
     "noUnusedLocals": true,
-    "noFallthroughCasesInSwitch": true
+    "noFallthroughCasesInSwitch": true,
+
+    "types": ["node"],
+    "baseUrl": "./",
+    "paths": {
+      "@toy-elementhh/components": ["./packages/components"]
+    }
   },
   "include": [
+    "env.d.ts",
     "packages/core/index.ts",
     "packages/hooks/**/*.ts",
     "packages/utils/**/*.ts",
-    "packages/components/**/index.ts",
-    "packages/components/**/*.ts",
-    "packages/components/**/*.vue"
+    "packages/components/**/*.ts"
   ],
   "exclude": ["packages/components/vitest.config.ts"]
 }

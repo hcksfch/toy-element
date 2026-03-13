@@ -33,6 +33,6 @@ const customStyles = computed(() => {
 });
 </script>
 
-<style>
+<style scoped>
 @import "./style.css";
 </style>
