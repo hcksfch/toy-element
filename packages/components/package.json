@@ -10,10 +10,6 @@
   "author": "",
   "license": "ISC",
   "packageManager": "pnpm@10.10.0",
-  "devDependencies": {
-    "@vitest/coverage-v8": "^4.0.18",
-    "@vue/test-utils": "^2.4.6",
-    "jsdom": "^28.1.0"
-  },
+  "devDependencies": {},
   "dependencies": {}
 }

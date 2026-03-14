@@ -34,8 +34,8 @@
   "keywords": [],
   "devDependencies": {
     "@rollup/plugin-terser": "^1.0.0",
-    "@toy-elementhh/components": "workspace:*",
     "rollup-plugin-visualizer": "^7.0.1",
+    "@toy-elementhh/components": "workspace:*",
     "terser": "^5.46.0",
     "vite-plugin-compression2": "^2.5.0",
     "vite-plugin-dts": "^4.5.4"
