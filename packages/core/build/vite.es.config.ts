@@ -2,11 +2,12 @@ import { defineConfig } from "vite";
 import vue from "@vitejs/plugin-vue";
 import { resolve } from "path";
 import dts from "vite-plugin-dts";
-import { readdirSync } from "fs";
+import { readdirSync, readdir } from "fs";
 import { filter, map, delay } from "lodash-es";
 import shell from "shelljs";
 import hooks from "./hooksPlugin";
 import terser from "@rollup/plugin-terser";
+import { visualizer } from "rollup-plugin-visualizer";
 
 const isProd = process.env.NODE_ENV === "production";
 const isDev = process.env.NODE_ENV === "development";
@@ -22,17 +23,20 @@ function getDirectoriesSync(basePath: string) {
 }
 const TRY_MOVE_STYLES_DELAY = 800 as const;
 function moveStyles() {
-  try {
-    readdirSync("./dist/es/theme");
+  readdir("./dist/es/theme", (err) => {
+    if (err) {
+      return delay(moveStyles, TRY_MOVE_STYLES_DELAY);
+    }
     shell.mv("./dist/es/theme", "./dist");
-  } catch (_) {
-    delay(moveStyles, TRY_MOVE_STYLES_DELAY);
-  }
+  });
 }
 
 export default defineConfig({
   plugins: [
     vue(),
+    visualizer({
+      filename: "dist/stats.es.html",
+    }),
     dts({
       tsconfigPath: "../../tsconfig.build.json",
       outDir: "dist/types",
@@ -79,7 +83,7 @@ export default defineConfig({
     minify: false,
     cssCodeSplit: true,
     lib: {
-      entry: resolve(__dirname, "./index.ts"),
+      entry: resolve(__dirname, "../index.ts"),
       name: "ToyElementhh",
       fileName: "index",
       formats: ["es"],
