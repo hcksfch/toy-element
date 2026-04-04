@@ -14,7 +14,6 @@ export function makeInstaller(components: Plugin[]) {
 }
 
 export const withInstall = <T>(component: T) => {
-  if (!component) return;
   const ccomp = component as SFCWithInstall<T>;
   ccomp.install = (app: App) => {
     app.component(ccomp.name, ccomp);
